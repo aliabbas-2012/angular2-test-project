@@ -18,7 +18,7 @@ export class ProductListComponent {
             "productCode": "GDN-0011",
             "releaseDate": "March 19, 2016",
             "description": "Leaf rake with 48-inch wooden handle.",
-            "price": 19.95,
+            "price": 19.9,
             "starRating": 3.2,
             "imageUrl": "http://images.clipartpanda.com/sports-equipment-clipart-black-and-white-soccer-ball-hi.png"
         },
