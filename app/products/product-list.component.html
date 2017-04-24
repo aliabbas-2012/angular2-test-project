@@ -6,13 +6,13 @@
         <div class="row">
             <div class="col-md-2">{{filterByTitle}}</div>
             <div class="col-md-4">
-                <input type="text" />
+                <input type="text" [(ngModel)] = "filterParameter" />
             </div>
         </div>    
 
         <div class="row">
             <div class="col-md-6">
-                <h3> Filtered by: </h3>
+                <h3> Filtered by: {{filterParameter}}</h3>
             </div>
         </div>
         <div class="table-responsive" *ngIf='products && products.length'>
@@ -20,8 +20,8 @@
                 <thead>
                     <tr>
                           <th>
-                            <button class="btn btn-primary">
-                                {{imageHeading}}
+                            <button class="btn btn-primary" (click)='toggleImage()'>
+                                {{!showImage ? showImageHeading : hideImageHeading}}
                             </button>    
                           </th>  
                           <th>Product</th>  
@@ -34,18 +34,19 @@
                 <tbody>
                     <tr *ngFor='let product of products' >
                         <td>
-                            <img 
+                            <img *ngIf='showImage'
                                 [src] = "product.imageUrl" 
-                                [title] = "product.productName" 
+                                [title] = "product.productName | uppercase" 
                                 data-id="{{product.productId}}" 
                                 [style.width.px]="imageWidth"
-                                [style.margin.px]="imageWidth" 
+                                [style.margin.px]="imageMargin" 
+                                [style.margin.px]="imageMargin" 
                             />
                         </td>  
                         <td>{{product.productName}}</td>  
                         <td>{{product.productCode}}</td>  
                         <td>{{product.releaseDate}}</td>  
-                        <td>{{product.price}}</td>  
+                        <td>{{product.price | currency: 'USD' : true : '1.2-3'}}</td>  
                         <td>{{product.starRating}}</td>  
                     </tr>
                 </tbody>
