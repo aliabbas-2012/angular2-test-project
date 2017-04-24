@@ -8,7 +8,9 @@ import {Component} from '@angular/core'
 export class ProductListComponent {
     pageTitle: string = "Product List"
     filterByTitle:string = "Filter By"
-    imageHeading: string = "Show Image"
+    showImageHeading: string = "Show Image"
+    hideImageHeading: string = "Hide Image"
+    filterParameter: string = ""
     products: any[] = [
         {
             "productId": 1,
@@ -63,7 +65,11 @@ export class ProductListComponent {
     ]
     imageWidth: number = 50
     imageMargin: number = 2
+    showImage: boolean = false
     getTiitle(): string  {
             return this.pageTitle;
+    }
+    toggleImage(): void {
+        this.showImage = !this.showImage
     }
 }
