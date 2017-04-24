@@ -83,7 +83,7 @@ export class ProductListComponent implements OnInit {
         console.log("---on initialization----");
     }
     onRatingClick(message: string):void {
-        console.log(message);
+        console.log(message); 
         this.ratingClickedTitle =  " : " + message;
     }
 }
