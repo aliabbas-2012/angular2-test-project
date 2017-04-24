@@ -6,6 +6,7 @@ import { ProductFilterPipe }  from './product-filter-pipe';
     selector: "product-list",
     templateUrl: "app/products/product-list.component.html",
     styleUrls: ["app/products/product-list.component.css"],
+
   
 })
 
@@ -15,6 +16,8 @@ export class ProductListComponent implements OnInit {
     showImageHeading: string = "Show Image"
     hideImageHeading: string = "Hide Image"
     filterParameter: string = ""
+    ratingClickedTitle: string = ""
+
     products: IProduct[] = [
         {
             "productId": 1,
@@ -78,5 +81,9 @@ export class ProductListComponent implements OnInit {
     }
     ngOnInit(): void {
         console.log("---on initialization----");
+    }
+    onRatingClick(message: string):void {
+        console.log(message);
+        this.ratingClickedTitle =  " : " + message;
     }
 }
