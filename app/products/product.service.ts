@@ -6,7 +6,7 @@ import { IProduct }  from './product';
 
 @Injectable()
 export class ProductService {
-    private _productUrl = 'api/products/products.json'
+    private _productUrl = '/api/products/products.json'
 
     constructor(private _http:Http){}
     
@@ -21,4 +21,21 @@ export class ProductService {
         console.log(error);
         return Observable.throw(error.json().error || 'Server error')
      }
+
+    getProduct(id: number):Observable<IProduct> {
+        // return this.getProducts().map((products: IProduct[])=> products.find(p=> p.productId===id))
+
+       
+        // let t = this.getProducts()
+        //     console.log('-----sdssd-------')
+        //     console.log(id)
+        //     console.log( t);
+        // this.getProducts().
+        //     subscribe(
+        //         products=> console.log(products),
+                
+        // ) // 
+        return this.getProducts()
+            .map((products: IProduct[]) => products.find(p => p.productId === id));
+    }
 }

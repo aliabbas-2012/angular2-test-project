@@ -6,7 +6,7 @@ import { ProductService }  from './products/product.service';
 @Component({
     selector: 'my-app',
     template: `
-        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <nav class="navbar navbar-inverse" role="navigation">
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
@@ -36,6 +36,13 @@ import { ProductService }  from './products/product.service';
         </nav>
         <div class="container">
             <router-outlet></router-outlet>
+            <footer>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <p>Copyright &copy; Your Website 2017</p>
+                    </div>              
+                </div>
+            </footer>
         </div>
     `,
     providers: [ProductService]

@@ -7,12 +7,13 @@ import {APP_BASE_HREF} from '@angular/common';
 import { AppComponent }  from './app.component';
 import {WelcomeComponent} from './home/welcome.component'
 import { ProductListComponent }  from './products/product-list.component';
+import { ProductDetailComponent }  from './products/product-detail.component';
 import { ProductFilterPipe }  from './products/product-filter-pipe';
 import { StarComponent }  from './shared/star.component';
 import { routing } from './app.routes';
 @NgModule({
   imports: [ BrowserModule,FormsModule,HttpModule, routing ],
-  declarations: [ AppComponent,WelcomeComponent,ProductListComponent,ProductFilterPipe,StarComponent],
+  declarations: [ AppComponent,WelcomeComponent,ProductListComponent,ProductDetailComponent,ProductFilterPipe,StarComponent],
   // pipes: [ProductFilterPipe],
   providers: [{provide: APP_BASE_HREF, useValue : '/' }],
   bootstrap: [ AppComponent ]
