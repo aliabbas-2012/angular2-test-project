@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+// import { HttpModule }  from '@angular/http';
+import 'rxjs/Rx'
+import { ProductService }  from './products/product.service';
 
 @Component({
     selector: 'my-app',
@@ -7,6 +10,7 @@ import { Component } from '@angular/core';
             <product-list></product-list>
         </div>
     `,
+    providers: [ProductService]
    
 })
 export class AppComponent {
